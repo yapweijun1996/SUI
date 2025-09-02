@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users - Admin Panel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <!-- Topbar -->
+    <header class="topbar">
+        <div class="topbar-left">
+            <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle sidebar">☰</button>
+            <h1>Admin Panel</h1>
+        </div>
+        <div class="topbar-right">
+            <input type="text" placeholder="Search..." class="search-input" aria-label="Search">
+            <button class="btn" aria-label="Notifications">Notifications</button>
+            <div class="user-menu">
+                <span>User</span>
+                <div class="dropdown">
+                    <a href="#">Profile</a>
+                    <a href="#">Settings</a>
+                    <a href="#">Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation">
+        <ul>
+            <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a href="users.html"><i class="fas fa-users"></i> Users</a></li>
+            <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+            <li><a href="reports.html"><i class="fas fa-chart-bar"></i> Reports</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <section>
+            <h2>Users</h2>
+            <input type="text" id="user-search" placeholder="Search users..." class="search-input">
+            <button class="btn btn-primary" id="add-user-btn">Add User</button>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>John Doe</td>
+                        <td>john@example.com</td>
+                        <td>Active</td>
+                        <td>
+                            <button class="btn btn-secondary">Edit</button>
+                            <button class="btn btn-danger">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Jane Smith</td>
+                        <td>jane@example.com</td>
+                        <td>Inactive</td>
+                        <td>
+                            <button class="btn btn-secondary">Edit</button>
+                            <button class="btn btn-danger">Delete</button>
+                        </td>
+                    </tr>
+                    <!-- More rows can be added -->
+                </tbody>
+            </table>
+            <div class="pagination">
+                <button class="btn">Previous</button>
+                <span>Page 1 of 10</span>
+                <button class="btn">Next</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal for Add User -->
+    <div class="modal" id="add-user-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Add New User</h3>
+            <form class="form">
+                <label for="new-name">Name:</label>
+                <input type="text" id="new-name" name="name">
+
+                <label for="new-email">Email:</label>
+                <input type="email" id="new-email" name="email">
+
+                <button type="submit" class="btn btn-primary">Add</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">Action completed successfully!</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

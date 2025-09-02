@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Admin Panel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <!-- Topbar -->
+    <header class="topbar">
+        <div class="topbar-left">
+            <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle sidebar">☰</button>
+            <h1>Admin Panel</h1>
+        </div>
+        <div class="topbar-right">
+            <input type="text" placeholder="Search..." class="search-input" aria-label="Search">
+            <button class="btn" aria-label="Notifications">Notifications</button>
+            <div class="user-menu">
+                <span>User</span>
+                <div class="dropdown">
+                    <a href="#">Profile</a>
+                    <a href="#">Settings</a>
+                    <a href="#">Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation">
+        <ul>
+            <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a href="users.html"><i class="fas fa-users"></i> Users</a></li>
+            <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+            <li><a href="reports.html"><i class="fas fa-chart-bar"></i> Reports</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <section>
+            <h2>Settings</h2>
+            <form class="form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username">
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+
+                <label for="role">Role:</label>
+                <select id="role" name="role">
+                    <option value="admin">Admin</option>
+                    <option value="user">User</option>
+                </select>
+
+                <label>
+                    <input type="checkbox" name="notifications"> Enable Notifications
+                </label>
+
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">Action completed successfully!</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
